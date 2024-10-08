@@ -12,6 +12,10 @@ class BoardsController < ApplicationController
 		redirect_to action: :index
 	end
 
+	def show
+		@board = Board.find(params[:id])
+	end
+
 	private
 	def board_params
 		params.require(:board).permit(:author_name, :title, :body)
