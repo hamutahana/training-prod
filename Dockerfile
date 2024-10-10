@@ -10,11 +10,8 @@ RUN apk add g++ make mysql-dev tzdata
 # コンテナを起動した時の作業ディレクトリを/appにする
 WORKDIR /app
 
-# PC上のGemfile を .（/app）にコピー
-COPY Gemfile .
-
-# railsサーバー起動前にGemfile.lockに存在するgemがインストールされている必要がある
-COPY Gemfile.lock .
+COPY . /app
 
 # bundle installでGemfileに記述されているgemをインストール
+# railsサーバー起動前にGemfile.lockに存在するgemがインストールしておく必要がある
 RUN bundle install
