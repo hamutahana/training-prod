@@ -8,7 +8,7 @@ FROM ruby:3.2.2-alpine
 RUN apk update
 
 # パッケージをインストールするコマンドを実行
-RUN apk add g++ make mysql-dev tzdata
+RUN apk add g++ make mysql-dev tzdata vim
 
 # コンテナを起動した時の作業ディレクトリを/appにする
 WORKDIR /app
